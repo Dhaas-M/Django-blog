@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+
+<div>
+    <img src="{{article.thumb.url}}" alt="">
+    <h2>{{article.title}}</h2>
+    <p>{{article.body}}</p>
+    <p>{{article.date}}</p>
+
+    <form action="/accounts/logout/" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+{% endblock %}
